@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.Rendering;
 
 namespace FieldSystem
 {
@@ -22,6 +24,11 @@ namespace FieldSystem
         /// </summary>
         public virtual void OnValidate()
         {
+        }
+
+        public virtual void ModifyTile(params object[] args)
+        {
+            field.OnTileModified.Invoke(this, args);
         }
 
         /// <summary>

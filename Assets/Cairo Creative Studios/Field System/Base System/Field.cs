@@ -18,6 +18,7 @@ namespace FieldSystem
         public UnityEvent<TObject, TTile> OnObjectAdded = new();
         public UnityEvent<TObject, TTile> OnObjectRemoved = new();
         public UnityEvent<TObject, TTile> OnObjectMoved = new();
+        public UnityEvent<FieldTile<TField, TTile, TObject, TProperties>, object[]> OnTileModified = new();
 
         public TObject[] this[int x, int y] => GetFieldObjectsAtPosition(x, y);
         public TObject[] this[Vector2Int position] => GetFieldObjectsAtPosition(position.x, position.y);
