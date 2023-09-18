@@ -28,9 +28,9 @@ namespace FieldSystem
         /// Extend to resolve a position directly above the tile
         /// </summary>
         /// <returns></returns>
-        public virtual Vector3 ResolvePosition()
+        public virtual Vector3 GetObjectPosition()
         {
-            return transform.position;
+            return transform.position + field.properties.objectOffset;
         }
     }
 }
