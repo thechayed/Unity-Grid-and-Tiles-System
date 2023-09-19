@@ -34,7 +34,12 @@ public class MyField : Field<MyField, MyTile, MyObject, MyProperties>
 // This demonstrates how to set up a custom Field Tile with a custom Property, and how it's Rendering can be customized
 public class MyTile : FieldTile<MyField, MyTile, MyObject, MyProperties>
 {
-  public string text = field.properties.defaultText;
+  public string text = "";
+
+  void Start()
+  {
+    text = field.properties.defaultText;
+  }
 
   public override void Render()
   {
