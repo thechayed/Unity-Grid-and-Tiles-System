@@ -7,7 +7,7 @@ Download the .UnityPackage and import it into your project. UPM version coming s
 
 ## Features
 - An extensive suite of Grid based Tiled Game System functionality.
-- Fields (extends IGrid, see Unity Generic Grid): The Grid that is used to as the basis for generating the Tiles and Field Objects. Tiles and Objects are created as children of the Field.
+- Fields (extends IGrid, see [Unity Generic Grid](https://github.com/thechayed/Unity-Generic-Grid)): The Grid that is used to as the basis for generating the Tiles and Field Objects. Tiles and Objects are created as children of the Field.
   - Extend the Field, MeshField, or SpriteField to add additional functionality.
   - Fields are created via the Add Component button in the GameObject Inspector.
   - Field Generation is done via the "Generate Field" button in the Field's Inspector (Field Properties must be set).
