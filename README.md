@@ -31,7 +31,7 @@ public class MyField : Field<MyField, MyTile, MyObject, MyProperties>
   - Extend Field Tiles to add unique properties to them, and customize the way in which they are rendered.
   - Tiles are generated automatically by the Field when the "Generate Field" button is clicked.
 ``` c#
-/// This demonstrates how to set up a custom Field Tile with a custom Property, and how it's Rendering can be customized
+// This demonstrates how to set up a custom Field Tile with a custom Property, and how it's Rendering can be customized
 public class MyTile : FieldTile<MyField, MyTile, MyObject, MyProperties>
 {
   public string text = field.properties.defaultText;
@@ -41,9 +41,10 @@ public class MyTile : FieldTile<MyField, MyTile, MyObject, MyProperties>
     tile.transform.eulerAngles = new Vector3(0, Mathf.Sin(Time.time) * 15, 0);
   }
 
-  public override void OnTileModified(params object[] args)
+// You can also override ModifyTile to add some standard modification functionality to the Tile
+  public override void ModifyTile(params object[] args)
   {
-    base.OnTileModified(args);
+    base.ModifyTile(args);
     text = (string)args[0];
   }
 }
