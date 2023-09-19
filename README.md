@@ -1,4 +1,4 @@
-# Unity-Tile-Fields
+# Unity Grid and Tiles System
 A Field System that enhances gameplay in Unity projects by facilitating the dynamic management of objects and tiles within grid-based environments.
 This is good for games that require a Grid Based Battle System, as it vastly simplifies the approach for setting up unique grids and interactions.
 
