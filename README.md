@@ -11,7 +11,7 @@ Download the .UnityPackage and import it into your project. UPM version coming s
   - Extend the Field, MeshField, or SpriteField to add additional functionality.
   - Fields are created via the Add Component button in the GameObject Inspector.
   - Field Generation is done via the "Generate Field" button in the Field's Inspector (Field Properties must be set).
-  - Contains OnTileModified, OnObjectAdded, OnObjectRemoved, and OnObjectMoved Events, as well as Unity-Generic-Grid events for Tiles including: OnItemAdded, OnItemMoved, and OnItemRemoved.
+  - Contains `OnTileModified`, `OnObjectAdded`, `OnObjectRemoved`, and `OnObjectMoved` Events, as well as `Grid<T>` events for Tiles including: `OnItemAdded`, `OnItemMoved`, and `OnItemRemoved`.
 ``` c#
 // This demonstrates how to set up a custom Field that set's Tile Text values to "Hello, World!" on Generation.
 public class MyField : Field<MyField, MyTile, MyObject, MyProperties>
@@ -56,7 +56,7 @@ public class MyTile : FieldTile<MyField, MyTile, MyObject, MyProperties>
 ```
 - Field Properties: Field Properties allow you to store Data for the Field
   - Extend Field Properties to add more data for the Field
-  - You can also simply use the "Generate Properties" button in the Field's Inspector to create the Properties Asset, but as it extends Scriptable Object, you can also use the [CreateAssetMenu] attribute.
+  - You can also simply use the "Generate Properties" button in the Field's Inspector to create the Properties Asset, but as it extends `ScriptableObject`, you can also use the `[CreateAssetMenu]` attribute.
 ``` c#
 // This demonstrates how to set up Properties for your custom Field.
 
@@ -69,7 +69,7 @@ public class MyFieldProperties : MyFieldProperties<MyField>
 ```
 - Field Objects: Field Objects are rendered above the Tiles on the Field. this can be any number of things, from units in a TBS game, or marker in a Grid Based map, or the selection in a Menu, and so on.
   - Extend Field Objects to customize how the Objects should be rendered.
-  - To Create an Object, you must call the Field's CreateFieldObject(x, y) method. This will create the Object above the Tile at the given Position, and return it.
+  - To Create an Object, you must call the Field's `CreateFieldObject(x, y)` method. This will create the Object above the Tile at the given Position, and return it.
 ``` c#
 // This demonstrates how to create a Field Object that instantiates a Prefab to use for rendering the Object, 
 // and then moving it on Render.
