@@ -1,5 +1,6 @@
 # Unity-Tile-Fields
 A Field System that enhances gameplay in Unity projects by facilitating the dynamic management of objects and tiles within grid-based environments.
+This is good for games that require a Grid Based Battle System, as it vastly simplifies the approach for setting up unique grids and interactions.
 
 ## Installation
 Download the .UnityPackage and import it into your project. UPM version coming soon.
@@ -10,6 +11,7 @@ Download the .UnityPackage and import it into your project. UPM version coming s
   - Extend the Field, MeshField, or SpriteField to add additional functionality.
   - Fields are created via the Add Component button in the GameObject Inspector.
   - Field Generation is done via the "Generate Field" button in the Field's Inspector (Field Properties must be set).
+  - Contains OnTileModified, OnObjectAdded, OnObjectRemoved, and OnObjectMoved Events, as well as Unity-Generic-Grid events for Tiles including: OnItemAdded, OnItemMoved, and OnItemRemoved.
 ``` c#
 // This demonstrates how to set up a custom Field that set's Tile Text values to "Hello, World!" on Generation.
 public class MyField : Field<MyField, MyTile, MyObject, MyProperties>
@@ -37,6 +39,12 @@ public class MyTile : FieldTile<MyField, MyTile, MyObject, MyProperties>
   public override void Render()
   {
     tile.transform.eulerAngles = new Vector3(0, Mathf.Sin(Time.time) * 15, 0);
+  }
+
+  public override void OnTileModified(params object[] args)
+  {
+    base.OnTileModified(args);
+    text = (string)args[0];
   }
 }
 ```
